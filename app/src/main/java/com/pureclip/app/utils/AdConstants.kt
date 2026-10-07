@@ -1,0 +1,13 @@
+package com.pureclip.app.utils
+
+object AdConstants {
+    const val TEST_APP_ID = "ca-app-pub-3940256099942544~3347511713"
+    const val TEST_APP_OPEN = "ca-app-pub-3940256099942544/9257395921"
+    const val TEST_BANNER = "ca-app-pub-3940256099942544/6300978111"
+    const val TEST_ADAPTIVE_BANNER = "ca-app-pub-3940256099942544/9214589741"
+    const val TEST_INTERSTITIAL = "ca-app-pub-3940256099942544/1033173712"
+    const val TEST_REWARDED = "ca-app-pub-3940256099942544/5224354917"
+    const val TEST_REWARDED_INTERSTITIAL = "ca-app-pub-3940256099942544/5354046379"
+    const val TEST_NATIVE = "ca-app-pub-3940256099942544/2247696110"
+    const val TEST_NATIVE_VIDEO = "ca-app-pub-3940256099942544/1044960115"
+}

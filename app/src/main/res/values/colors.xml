@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core brand colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Design System Colors -->
+    <color name="primary">#2962FF</color>
+    <color name="primary_dark">#0039CB</color>
+    <color name="secondary">#7C4DFF</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface">#F5F5F5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="success">#00C853</color>
+    <color name="error">#D50000</color>
+    <color name="warning">#FFAB00</color>
+
+    <!-- Gradient -->
+    <color name="gradient_primary">#2962FF</color>
+    <color name="gradient_end">#0039CB</color>
+    <color name="on_gradient">#FFFFFF</color>
+
+    <!-- Neutrals -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface_variant">#EEEEEE</color>
+    <color name="on_surface">#212121</color>
+    <color name="on_background">#212121</color>
+    <color name="muted">#757575</color>
+
+    <!-- Input field -->
+    <color name="input_background">#F5F5F5</color>
+
+    <!-- Ad placeholder -->
+    <color name="ad_placeholder">#E0E0E0</color>
+
+    <!-- Platform-specific colors -->
+    <color name="platform_tiktok">#FE2C55</color>
+    <color name="platform_tiktok_accent">#FE2C55</color>
+    <color name="platform_facebook">#1877F2</color>
+    <color name="platform_facebook_accent">#1877F2</color>
+    <color name="platform_instagram">#E1306C</color>
+    <color name="platform_instagram_accent">#E1306C</color>
+    <color name="chip_background">#FFFFFF</color>
+    <color name="chip_outline">#D1D5DB</color>
+</resources>

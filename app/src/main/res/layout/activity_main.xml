@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.main.PureClipActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="64dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ================= HEADER BACKGROUND ================= -->
+            <View
+                android:id="@+id/headerBackground"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/bg_header_gradient" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ================= BRAND ================= -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="24dp">
+
+                    <FrameLayout
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:background="@drawable/bg_logo_glass">
+
+                        <ImageView
+                            android:id="@+id/ivLogo"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_launcher_foreground"
+                            app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvAppTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:letterSpacing="0.06"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAppTagline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/app_tagline"
+                        android:textAlignment="center"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="14sp" />
+
+                    <!-- Platform chips -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_glass"
+                            android:drawableStart="@drawable/ic_tiktok"
+                            android:drawablePadding="6dp"
+                            android:drawableTint="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="TikTok"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:background="@drawable/bg_chip_glass"
+                            android:drawableStart="@drawable/ic_facebook"
+                            android:drawablePadding="6dp"
+                            android:drawableTint="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="Facebook"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_glass"
+                            android:drawableStart="@drawable/ic_instagram"
+                            android:drawablePadding="6dp"
+                            android:drawableTint="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="Instagram"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ================= CONTENT CONTAINER ================= -->
+                <FrameLayout
+                    android:id="@+id/contentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp">
+
+                    <!-- ================= STATE: IDLE ================= -->
+                    <LinearLayout
+                        android:id="@+id/layoutIdle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingBottom="40dp"
+                        android:visibility="visible">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="28dp"
+                            app:cardElevation="8dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dán liên kết video"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilUrl"
+                                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:hint="@string/placeholder_url"
+                                    app:boxBackgroundColor="@color/input_background"
+                                    app:boxCornerRadiusBottomEnd="16dp"
+                                    app:boxCornerRadiusBottomStart="16dp"
+                                    app:boxCornerRadiusTopEnd="16dp"
+                                    app:boxCornerRadiusTopStart="16dp"
+                                    app:boxStrokeColor="@color/primary"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="1.5dp"
+                                    app:startIconDrawable="@drawable/ic_search"
+                                    app:startIconTint="@color/text_secondary">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etUrl"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="textUri"
+                                        android:maxLines="3"
+                                        android:minLines="2"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="14dp"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnPaste"
+                                        style="@style/Widget.Material3.Button.TonalButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_weight="1.2"
+                                        android:text="@string/btn_paste"
+                                        android:textColor="@color/primary"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold"
+                                        app:backgroundTint="#1A2962FF"
+                                        app:cornerRadius="16dp"
+                                        app:icon="@drawable/ic_paste"
+                                        app:iconTint="@color/primary" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnClear"
+                                        style="@style/Widget.Material3.Button.TonalButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/btn_clear"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="13sp"
+                                        app:backgroundTint="@color/input_background"
+                                        app:cornerRadius="16dp"
+                                        app:icon="@drawable/ic_delete"
+                                        app:iconTint="@color/text_secondary" />
+                                </LinearLayout>
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnFetch"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="58dp"
+                                    android:layout_marginTop="14dp"
+                                    android:text="@string/btn_fetch"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    app:backgroundTint="@color/primary"
+                                    app:cornerRadius="18dp"
+                                    app:icon="@drawable/ic_download"
+                                    app:iconGravity="textStart" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- ================= STATE: LOADING ================= -->
+                    <LinearLayout
+                        android:id="@+id/layoutLoading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingBottom="40dp"
+                        android:visibility="gone">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="28dp"
+                            app:cardElevation="8dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="24dp"
+                                android:paddingVertical="48dp">
+
+                                <FrameLayout
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/bg_pill_soft">
+
+                                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:indeterminate="true"
+                                        app:indicatorColor="@color/primary"
+                                        app:indicatorSize="48dp"
+                                        app:trackColor="@color/input_background"
+                                        app:trackThickness="4.5dp" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/tvLoadingState"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:text="@string/loading_analyzing"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvLoadingDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center"
+                                    android:text="@string/loading_connecting"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- ================= STATE: ERROR ================= -->
+                    <LinearLayout
+                        android:id="@+id/layoutError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingBottom="40dp"
+                        android:visibility="gone">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="28dp"
+                            app:cardElevation="8dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="24dp">
+
+                                <FrameLayout
+                                    android:id="@+id/flErrorIconContainer"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/bg_pill_soft"
+                                    android:backgroundTint="#1AD50000">
+
+                                    <ImageView
+                                        android:id="@+id/ivErrorIcon"
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_gravity="center"
+                                        android:importantForAccessibility="no"
+                                        android:src="@drawable/ic_error"
+                                        app:tint="@color/error" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/tvErrorTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="@string/error_title"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvErrorMessage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:lineSpacingExtra="4dp"
+                                    android:text="@string/error_message"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="14sp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnRetry"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="54dp"
+                                    android:layout_marginTop="24dp"
+                                    android:text="@string/btn_retry"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:backgroundTint="@color/primary"
+                                    app:cornerRadius="18dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnPasteOther"
+                                    style="@style/Widget.Material3.Button.TonalButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="54dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="@string/btn_paste_other"
+                                    android:textColor="@color/primary"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:backgroundTint="#1A2962FF"
+                                    app:cornerRadius="18dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ================= Ad Banner Container ================= -->
+    <FrameLayout
+        android:id="@+id/adContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:minHeight="50dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PureClip</string>
+    <string name="app_tagline">Tải video không logo\ntừ TikTok, Facebook, Instagram</string>
+
+    <!-- Platform labels -->
+    <string name="platform_label">CHỌN NỀN TẢNG</string>
+    <string name="platform_tiktok">TikTok</string>
+    <string name="platform_facebook">Facebook</string>
+    <string name="platform_instagram">Instagram</string>
+    <string name="supported_platforms_title">Hỗ trợ các nền tảng</string>
+    <string name="supported_platforms">Hỗ trợ: TikTok • Facebook • Instagram</string>
+
+    <!-- Input -->
+    <string name="placeholder_url">Dán link vào đây...</string>
+    <string name="btn_paste">DÁN</string>
+    <string name="btn_clear">XÓA</string>
+    <string name="btn_fetch">LẤY VIDEO</string>
+    <string name="btn_download">Tải về không watermark</string>
+
+    <!-- Error -->
+    <string name="error_title">Không thể tải video</string>
+    <string name="error_message">Link không hợp lệ hoặc video đã bị xóa. Vui lòng kiểm tra lại</string>
+    <string name="error_no_platform">Không tìm thấy video cho nền tảng này</string>
+    <string name="btn_retry">THỬ LẠI</string>
+    <string name="btn_paste_other">DÁN LINK KHÁC</string>
+    <string name="error_network">Lỗi mạng. Vui lòng thử lại</string>
+    <string name="error_generic">Đã có lỗi xảy ra</string>
+    <string name="error_no_internet_title">Không có kết nối Internet</string>
+    <string name="error_no_internet_message">Vui lòng kiểm tra kết nối Wi-Fi hoặc dữ liệu di động của bạn và thử lại</string>
+    <string name="toast_no_internet">Không có kết nối Internet. Vui lòng kiểm tra lại mạng</string>
+
+    <!-- Loading -->
+    <string name="loading_analyzing">Đang phân tích link...</string>
+    <string name="loading_connecting">Đang kết nối...</string>
+
+    <!-- Feedback messages -->
+    <string name="toast_clipboard_empty">Clipboard rỗng</string>
+    <string name="toast_no_content">Không có nội dung để dán</string>
+    <string name="toast_url_empty">Vui lòng nhập link video</string>
+    <string name="toast_fetch_success">Tìm thấy video!</string>
+    <string name="toast_download_started">Đang tải video… Kiểm tra thông báo</string>
+    <string name="toast_download_failed">Tải không thành công</string>
+
+    <!-- Preview card -->
+    <string name="thumbnail_placeholder">Thumbnail</string>
+    <string name="thumbnail_loading">Đang tải trước…</string>
+
+    <!-- Ad placeholders -->
+    <string name="ad_placeholder">BANNER QUẢNG CÁO ADMOB</string>
+    <string name="progress_placeholder">30%</string>
+
+    <!-- Navigation -->
+    <string name="action_settings">Cài đặt</string>
+    <string name="first_fragment_label">Tải video</string>
+</resources>
