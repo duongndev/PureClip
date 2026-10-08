@@ -5,7 +5,10 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.graphics.Rect
+import android.view.MotionEvent
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -21,6 +24,7 @@ import com.pureclip.app.databinding.ActivityMainBinding
 import com.pureclip.app.ui.result.ResultActivity
 import com.pureclip.app.ui.result.ResultViewModel
 import com.pureclip.app.utils.AdsManager
+import com.pureclip.app.utils.KeyboardUtils
 import com.pureclip.app.utils.NetworkUtils
 import kotlinx.coroutines.launch
 
@@ -63,6 +67,7 @@ class PureClipActivity : AppCompatActivity() {
         }
 
         binding.btnFetch.setOnClickListener {
+            clearInputFocusAndHideKeyboard()
             val url = binding.etUrl.text?.toString().orEmpty()
             if (!NetworkUtils.isNetworkAvailable(this)) {
                 viewModel.setNoInternet()
@@ -164,6 +169,27 @@ class PureClipActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         AdsManager.pauseBanner(binding.adContainer)
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (ev?.action == MotionEvent.ACTION_DOWN) {
+            val v = currentFocus
+            if (v is EditText) {
+                val outRect = Rect()
+                val targetContainer = if (v.id == binding.etUrl.id) binding.tilUrl else v
+                targetContainer.getGlobalVisibleRect(outRect)
+                if (!outRect.contains(ev.rawX.toInt(), ev.rawY.toInt())) {
+                    clearInputFocusAndHideKeyboard()
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
+    private fun clearInputFocusAndHideKeyboard() {
+        binding.etUrl.clearFocus()
+        binding.main.requestFocus()
+        KeyboardUtils.hideKeyboard(this, binding.etUrl)
     }
 
     override fun onDestroy() {
