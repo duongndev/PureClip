@@ -6,50 +6,27 @@
 
 ---
 
-## Tính năng nổi bật (Features)
+## Tính năng
 
 - **Tải video không watermark**: Hỗ trợ bóc tách link và tải video HD từ TikTok, Facebook, Instagram không dính logo.
-- **Trích xuất âm thanh (MP3)**: Tùy chọn tải riêng nhạc/âm thanh từ video.
-- **Giao diện hiện đại & tinh gọn**: Thiết kế chuẩn Material Design 3, tối ưu trải nghiệm người dùng.
-- **Tiến trình tải thời gian thực**: Dialog hiển thị tiến độ % tải xuống trực quan, có thể thu nhỏ chạy nền.
 - **Tích hợp AdMob & Analytics**: Tải quảng cáo Banner, Interstitial Ad ngầm không gây giật lag và theo dõi chỉ số với Firebase Analytics.
 
 ---
 
-## Công nghệ & Kiến trúc (Tech Stack & Architecture)
+## Công nghệ & Kiến trúc
 
 - **Ngôn ngữ**: [Kotlin](https://kotlinlang.org/)
 - **Kiến trúc**: MVVM (Model-View-ViewModel)
-- **Bất đồng bộ**: Kotlin Coroutines + `StateFlow`
-- **Mạng (Networking)**: Retrofit 2 + Gson Converter
+- **Bất đồng bộ**: Kotlin Coroutines
+- **Mạng (Networking)**: Retrofit
 - **Quản lý file**: Android System `DownloadManager`
 - **Quảng cáo**: Google Mobile Ads SDK (AdMob)
 - **Phân tích**: Firebase Analytics (BoM)
 
 ---
 
-## Cấu trúc thư mục (Project Structure)
 
-```
-app/src/main/java/com/pureclip/app/
-├── data/
-│   ├── api/          # Retrofit Client & API Interfaces
-│   ├── model/        # Data Models (VideoInfo, UIState, ParseModels)
-│   └── repository/   # Video Repository & Data Layer
-├── ui/
-│   ├── PureClipActivity.kt   # Màn hình chính nhập link
-│   ├── PureClipViewModel.kt  # ViewModel quản lý trạng thái UI
-│   ├── ResultActivity.kt     # Màn hình chọn định dạng tải
-│   └── SplashActivity.kt     # Màn hình khởi động
-└── util/
-    ├── AdConstants.kt        # Hằng số AdMob Test IDs
-    ├── AdsManager.kt         # Quản lý hiển thị & pre-load quảng cáo
-    └── DownloadHelper.kt     # Quản lý tải xuống & Progress Dialog
-```
-
----
-
-## Hướng dẫn cài đặt & Thiết lập (Setup & Installation)
+## Hướng dẫn cài đặt & Thiết lập
 
 ### 1. Yêu cầu hệ thống
 - Android Studio Jellyfish / Ladybug (2024.1+) trở lên
