@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/surface"
     android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".ui.main.PureClipActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -90,47 +92,47 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_chip_glass"
-                            android:drawableStart="@drawable/ic_tiktok"
                             android:drawablePadding="6dp"
-                            android:drawableTint="@color/white"
                             android:gravity="center_vertical"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="6dp"
                             android:text="TikTok"
                             android:textColor="@color/white"
                             android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/ic_tiktok"
+                            app:drawableTint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:background="@drawable/bg_chip_glass"
-                            android:drawableStart="@drawable/ic_facebook"
                             android:drawablePadding="6dp"
-                            android:drawableTint="@color/white"
                             android:gravity="center_vertical"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="6dp"
                             android:text="Facebook"
                             android:textColor="@color/white"
                             android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/ic_facebook"
+                            app:drawableTint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_chip_glass"
-                            android:drawableStart="@drawable/ic_instagram"
                             android:drawablePadding="6dp"
-                            android:drawableTint="@color/white"
                             android:gravity="center_vertical"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="6dp"
                             android:text="Instagram"
                             android:textColor="@color/white"
                             android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/ic_instagram"
+                            app:drawableTint="@color/white" />
                     </LinearLayout>
                 </LinearLayout>
 
